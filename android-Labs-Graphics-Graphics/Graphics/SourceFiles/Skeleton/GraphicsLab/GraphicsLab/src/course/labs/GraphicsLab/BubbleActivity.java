@@ -341,15 +341,17 @@ public class BubbleActivity extends Activity {
 					// stop the BubbleView's Worker Thread. 
 					// Otherwise, request that the BubbleView be redrawn. 
 					
-					for (int i = 0; i < mFrame.getChildCount(); i++) {
-						BubbleView bubble = (BubbleView) mFrame.getChildAt(i);
+//					for (int i = 0; i < mFrame.getChildCount(); i++) {
+//						BubbleView bubble = (BubbleView) mFrame.getChildAt(i);
+					BubbleView bubble = me;
 						if (bubble.moveWhileOnScreen()) {
-							mMoverFuture.cancel(true);
+//							mMoverFuture.cancel(true);
+							bubble.stop(false);
+							bubble.mMoverFuture.cancel(true);
 						} else {
 							bubble.postInvalidate();
 						}
-						
-					}
+//					}
 					
 					
 				}
@@ -423,7 +425,7 @@ public class BubbleActivity extends Activity {
 			canvas.save();
 
 			// DONE - increase the rotation of the original image by mDRotate
-			mRotate += mDRotate;
+//			mRotate += mDRotate;
 
 			
 			// DONE - Rotate the canvas by current rotation
