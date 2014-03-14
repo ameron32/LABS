@@ -52,7 +52,7 @@
             android:id="@+id/etBody"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/llButtonBar"
+            android:layout_above="@+id/llDebugBar"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/etTitle"
@@ -65,8 +65,11 @@
             android:id="@+id/llButtonBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_above="@+id/llFinishBar"
             android:layout_alignParentLeft="true"
+            android:divider="?android:dividerVertical"
+            android:dividerPadding="8dp"
+            android:showDividers="middle"
             android:weightSum="4" >
 
             <RelativeLayout
@@ -190,6 +193,33 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/lightblue" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFinishBar"
+            style="?android:buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal"
+            android:weightSum="2" >
+
+            <Button
+                android:id="@+id/bCancel"
+                style="?android:buttonBarButtonStyle"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cancel" />
+
+            <Button
+                android:id="@+id/bCreate"
+                style="?android:buttonBarButtonStyle"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Create" />
         </LinearLayout>
     </RelativeLayout>
 
